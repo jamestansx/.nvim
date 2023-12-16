@@ -265,7 +265,7 @@ local RulerBlock
 do
     RulerBlock = {
         update = { "CursorMoved", "ModeChanged" },
-        provider = "%4(%l%):%2c %P",
+        provider = "%4(%l%):%3c %P",
     }
 end
 

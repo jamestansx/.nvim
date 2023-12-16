@@ -21,6 +21,7 @@ return {
                     PmenuSel = { fg = "NONE", bg = T.ui.bg_p2 },
                     PmenuSbar = { bg = T.ui.bg_m1 },
                     PmenuThumb = { bg = T.ui.bg_p2 },
+                    ["@lsp.type.comment.lua"] = {}, -- it overrides original highlight which makes comment ugly
                 }
             end,
         },
