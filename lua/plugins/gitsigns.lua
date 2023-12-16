@@ -27,8 +27,8 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = {
         signs = {
-            add = { text = "│" },
-            change = { text = "│" },
+            add = { text = "┃" },
+            change = { text = "┃" },
         },
         current_line_blame_opts = {
             delay = 500,
