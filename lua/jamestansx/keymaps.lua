@@ -1,9 +1,9 @@
 local map = function(mode, lhs, rhs, opts)
-	opts = vim.tbl_extend("force", {
-		noremap = true,
-		silent = true,
-	}, opts or {})
-	vim.keymap.set(mode, lhs, rhs, opts)
+    opts = vim.tbl_extend("force", {
+        noremap = true,
+        silent = true,
+    }, opts or {})
+    vim.keymap.set(mode, lhs, rhs, opts)
 end
 
 map("", "<Space>", "<Nop>")
@@ -49,10 +49,10 @@ map({ "n", "v" }, "<leader>D", [["_D]])
 
 -- ref: https://github.com/mhinz/vim-galore#saner-command-line-history
 map("c", "<C-n>", function()
-	return vim.fn.wildmenumode() == 1 and "<C-n>" or "<Down>"
+    return vim.fn.wildmenumode() == 1 and "<C-n>" or "<Down>"
 end, { expr = true, silent = false })
 map("c", "<C-p>", function()
-	return vim.fn.wildmenumode() == 1 and "<C-p>" or "<Up>"
+    return vim.fn.wildmenumode() == 1 and "<C-p>" or "<Up>"
 end, { expr = true, silent = false })
 
 map("n", "<leader>e", vim.diagnostic.open_float)
@@ -60,14 +60,14 @@ map("n", "<leader>q", vim.diagnostic.setloclist) -- XXX: or set quickfix?
 map("n", "[d", vim.diagnostic.goto_prev)
 map("n", "]d", vim.diagnostic.goto_next)
 map("n", "[e", function()
-	vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
+    vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end)
 map("n", "]e", function()
-	vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
+    vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
 end)
 map("n", "[w", function()
-	vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })
+    vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })
 end)
 map("n", "]w", function()
-	vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN })
+    vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN })
 end)

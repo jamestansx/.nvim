@@ -17,9 +17,9 @@ vim.opt.synmaxcol = 500 -- performance
 vim.opt.showmode = false
 vim.opt.hlsearch = false
 vim.opt.shortmess:append({
-	I = true, -- intro screen
-	C = true, -- ins-completion "scanning tags"
-	c = true, -- ins-completion message
+    I = true, -- intro screen
+    C = true, -- ins-completion "scanning tags"
+    c = true, -- ins-completion message
 })
 
 vim.opt.title = true
@@ -75,17 +75,17 @@ vim.opt.shiftround = true
 
 vim.opt.list = true
 vim.opt.listchars = {
-	trail = "·",
-	tab = "  ⇥",
-	nbsp = "␣",
-	extends = "→",
-	precedes = "←",
+    trail = "·",
+    tab = "  ⇥",
+    nbsp = "␣",
+    extends = "→",
+    precedes = "←",
 }
 vim.opt.fillchars = {
-	fold = " ",
-	foldopen = "▽",
-	foldsep = " ",
-	foldclose = "▷",
+    fold = " ",
+    foldopen = "▽",
+    foldsep = " ",
+    foldclose = "▷",
 }
 
 vim.opt.splitbelow = true
@@ -98,37 +98,37 @@ vim.opt.showbreak = "↪"
 vim.opt.linebreak = true
 
 vim.opt.diffopt:append({
-	"iwhite",
-	"algorithm:histogram",
-	"indent-heuristic",
+    "iwhite",
+    "algorithm:histogram",
+    "indent-heuristic",
 })
 vim.opt.jumpoptions = { "stack", "view" }
 
 if vim.fn.executable("rg") == 1 then
-	vim.opt.grepprg = "rg --no-heading --smart-case --vimgrep"
-	vim.opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+    vim.opt.grepprg = "rg --no-heading --smart-case --vimgrep"
+    vim.opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
 end
 
 autocmd({ "BufEnter" }, {
-	desc = "Set default formatoptions",
-	group = "DefaultFormatoptions",
-	callback = function()
-		vim.opt_local.formatoptions = {
-			t = true, -- wrap text with `textwidth`
-			c = true, -- wrap comment with `textwidth`
-			q = true, -- enable comment formatting with key <gq>
-			r = true, -- continue comment on <Enter> in insert mode
-			n = true, -- detect list on formatting
-			j = true, -- remove comment leader when joining lines
-			b = true, -- auto wrap in insert mode, ignore old lines
-		}
-	end,
+    desc = "Set default formatoptions",
+    group = "DefaultFormatoptions",
+    callback = function()
+        vim.opt_local.formatoptions = {
+            t = true, -- wrap text with `textwidth`
+            c = true, -- wrap comment with `textwidth`
+            q = true, -- enable comment formatting with key <gq>
+            r = true, -- continue comment on <Enter> in insert mode
+            n = true, -- detect list on formatting
+            j = true, -- remove comment leader when joining lines
+            b = true, -- auto wrap in insert mode, ignore old lines
+        }
+    end,
 })
 
 vim.diagnostic.config({
-	virtual_text = { source = "if_many" },
-	severity_sort = true,
-	update_in_insert = true,
+    virtual_text = { source = "if_many" },
+    severity_sort = true,
+    update_in_insert = true,
 })
 vim.fn.sign_define("DiagnosticSignError", { text = "E", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = "W", texthl = "DiagnosticSignWarn" })
